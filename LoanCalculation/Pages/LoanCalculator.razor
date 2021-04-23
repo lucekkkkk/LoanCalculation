@@ -1,0 +1,135 @@
+﻿@page "/"
+@page "/loancalculator"
+
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Buttons
+
+<h1>Loan Calculator</h1>
+
+<div class="loan-calculator">
+    <div class="loan-scroll">
+        <SfSlider Type="SliderType.MinRange" @bind-Value="@amountValue" Min="@minAmount" Max="@maxAmount" Step="1000">
+            <SliderTicksData Placement="Placement.After" SmallStep="150000" LargeStep="300000"></SliderTicksData>
+            <SliderTooltipData IsVisible="true" ShowOn="TooltipShowOn.Always" Placement="TooltipPlacement.After"></SliderTooltipData>
+        </SfSlider>
+    </div>
+
+
+    <p class="section-title">
+        <b>
+            Loan amount:
+            <SfTextBox Type="InputType.Number" Width="100px" Placeholder="@amountValue.ToString()" @onchange="(e => UpdateAmount((string)e.Value))" Value="@amountValue.ToString()"></SfTextBox> Kr
+        </b>
+    </p>
+
+    <div class="loan-scroll">
+        <SfSlider Type="SliderType.MinRange" @bind-Value="@durationValue" Min="@minDuration" Max="@maxDuration" Step="1">
+            <SliderTicksData Placement="Placement.After" SmallStep="1" LargeStep="5"></SliderTicksData>
+            <SliderTooltipData IsVisible="true" ShowOn="TooltipShowOn.Always" Placement="TooltipPlacement.After"></SliderTooltipData>
+        </SfSlider>
+    </div>
+
+    <p class="section-title">
+        <b>
+            Loan duration:
+            <SfTextBox Type="InputType.Number" Readonly="true" Width="100px" Placeholder="@durationValue.ToString()" Value="@durationValue.ToString()"></SfTextBox> years
+        </b>
+    </p>
+
+    <div class="section-terms">
+        <div class="checkbox">
+            <SfCheckBox Label="Include annual interest rate" @bind-Checked="@includeAnnualInterest"></SfCheckBox>
+        </div>
+        <div class="checkbox">
+            <SfCheckBox Label="Include administration fee" @bind-Checked="@includeAdministrationFee"></SfCheckBox>
+        </div>
+    </div>
+
+    <div class="section-buttons">
+        <a href="../PaymentOverview/@amountValue.ToString()/@durationValue.ToString()/@includeAnnualInterest/@includeAdministrationFee">
+            <SfButton CssClass="e-primary">Calculate</SfButton>
+        </a>
+        <SfButton CssClass="e-info" @onclick="@ResetSettings">Reset</SfButton>
+    </div>
+</div>
+
+
+@code {
+    double amountValue = 500000;
+    int durationValue = 10;
+
+    double maxAmount = 3000000;
+    int maxDuration = 30;
+
+    double minAmount = 300000;
+    int minDuration = 5;
+
+    bool includeAnnualInterest = true;
+    bool includeAdministrationFee = true;
+
+    public void UpdateAmount(string val)
+    {
+        if (!String.IsNullOrWhiteSpace(val))
+        {
+            try
+            {
+                double tempVal = Double.Parse(val);
+
+                if (tempVal > maxAmount)
+                {
+                    amountValue = maxAmount;
+                }
+                else if (tempVal < minAmount)
+                {
+                    amountValue = minAmount;
+                }
+                else
+                {
+                    amountValue = tempVal;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                ResetSettings();
+            }
+        }
+    }
+
+    public void UpdateDuration(string val)
+    {
+        if (!String.IsNullOrWhiteSpace(val))
+        {
+            try
+            {
+                int tempVal = Int32.Parse(val);
+
+                if (tempVal > maxDuration)
+                {
+                    durationValue = maxDuration;
+                }
+                else if (tempVal < minDuration)
+                {
+                    durationValue = minDuration;
+                }
+                else
+                {
+                    durationValue = tempVal;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                ResetSettings();
+            }
+        }
+    }
+
+    public void ResetSettings()
+    {
+        amountValue = 500000;
+        durationValue = 10;
+        includeAnnualInterest = true;
+        includeAdministrationFee = true;
+    }
+}
