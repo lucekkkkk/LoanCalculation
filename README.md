@@ -4,4 +4,4 @@ Simple Blazor aplication allowing user to get information about Loan, monthly in
 
 Used: Blazor, Syncfusion for UI preview
 
-Demo:
+Demo: https://lucekkkkk.github.io/LoanCalculation/
