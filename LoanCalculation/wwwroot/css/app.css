@@ -201,12 +201,16 @@ app {
     }
 
     .loan-scroll {
-        width: 100%;
-        margin-left: -1.5em;
+        width: 85%;
+        margin: auto;
+    }
+
+    .section-terms {
+        flex-direction: column;
     }
 }
 
-@media (min-width: 993px){
+@media (min-width: 993px) {
     .loan-scroll {
         width: 40%;
     }
@@ -222,9 +226,9 @@ app {
     flex-direction: row;
 }
 
-.section-terms > * {
-    margin: 0 0.4em 0px 0.4em;
-}
+    .section-terms > * {
+        margin: 0.4em 0.4em 0.4em 0.4em;
+    }
 
 .section-buttons {
     margin-top: 1em;
