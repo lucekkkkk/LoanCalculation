@@ -99,7 +99,7 @@ app {
 
 .content {
     padding-top: 1.1rem;
-    margin-top: 50px;
+    margin-top: 2em;
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -187,21 +187,46 @@ app {
 }
 
 .loan-calculator {
-    width: 80%;
-    margin-top: 1em;
+    width: 100%;
+    margin-top: 0.5em;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
 }
 
-.loan-scroll {
-    width: 80%;
-    margin-left: 1.5em;
+@media (max-width: 992px) {
+    .loan-calculator {
+        width: 100%;
+    }
+
+    .loan-scroll {
+        width: 100%;
+        margin-left: -1.5em;
+    }
+}
+
+@media (min-width: 993px){
+    .loan-scroll {
+        width: 40%;
+    }
 }
 
 .section-title {
     margin-top: 1em;
 }
 
+.section-terms {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+}
+
+.section-terms > * {
+    margin: 0 0.4em 0px 0.4em;
+}
+
 .section-buttons {
     margin-top: 1em;
-    width: 100%;
     justify-content: center;
 }
