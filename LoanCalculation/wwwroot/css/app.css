@@ -201,8 +201,12 @@ app {
     }
 
     .loan-scroll {
-        width: 100%;
-        margin-left: -1.5em;
+        width: 85%;
+        margin: auto;
+    }
+
+    .section-terms {
+        flex-direction: column;
     }
 }
 
@@ -223,10 +227,12 @@ app {
 }
 
 .section-terms > * {
-    margin: 0 0.4em 0px 0.4em;
+    margin: 0.4em 0.4em 0.4em 0.4em;
 }
 
 .section-buttons {
     margin-top: 1em;
     justify-content: center;
 }
+
+
