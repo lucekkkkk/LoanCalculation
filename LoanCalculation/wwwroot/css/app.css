@@ -195,6 +195,12 @@ app {
     display: flex;
 }
 
+.section-terms {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+}
+
 @media (max-width: 992px) {
     .loan-calculator {
         width: 100%;
@@ -220,15 +226,9 @@ app {
     margin-top: 1em;
 }
 
-.section-terms {
-    margin-top: 1em;
-    display: flex;
-    flex-direction: row;
+.section-terms > * {
+    margin: 0.4em 0.4em 0.4em 0.4em;
 }
-
-    .section-terms > * {
-        margin: 0.4em 0.4em 0.4em 0.4em;
-    }
 
 .section-buttons {
     margin-top: 1em;
