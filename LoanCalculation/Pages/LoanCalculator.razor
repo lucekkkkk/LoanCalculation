@@ -4,12 +4,13 @@
 @using Syncfusion.Blazor.Inputs
 @using Syncfusion.Blazor.Buttons
 
-<h1>Loan Calculator</h1>
 
 <div class="loan-calculator">
+    <h1>Loan Calculator</h1>
+
     <div class="loan-scroll">
         <SfSlider Type="SliderType.MinRange" @bind-Value="@amountValue" Min="@minAmount" Max="@maxAmount" Step="1000">
-            <SliderTicksData Placement="Placement.After" SmallStep="150000" LargeStep="300000"></SliderTicksData>
+            <SliderTicksData Placement="Placement.After" SmallStep="150000" LargeStep="2700000"></SliderTicksData>
             <SliderTooltipData IsVisible="true" ShowOn="TooltipShowOn.Always" Placement="TooltipPlacement.After"></SliderTooltipData>
         </SfSlider>
     </div>

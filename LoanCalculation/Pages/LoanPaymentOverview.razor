@@ -9,53 +9,55 @@
 
 @inject LoanCalculatorService LoanCalculatorService
 
-<h1>Loan Payment Overview</h1>
+<div class="loan-calculator">
+    <h1>Loan Payment Overview</h1>
 
-<table class="table table-striped col-8">
-    <tbody>
-        <tr>
-            <th scope="row">Loan amount</th>
-            <td>@LoanAmount Kr</td>
-        </tr>
-        <tr>
-            <th scope="row">Total loan cost</th>
-            <td>@paymentOverview.LoanTotalCost Kr</td>
-        </tr>
-        <tr>
-            <th scope="row">Loan duration</th>
-            <td>@LoanDuration years</td>
-        </tr>
-        <tr>
-            <th scope="row">Annual Interest</th>
-            <td>@paymentOverview.AnnualInterest % </td>
-        </tr>
-        <tr>
-            <th scope="row">Annual percentage rate of charge (APR)</th>
-            <td>@paymentOverview.LoanAPR %</td>
-        </tr>
-        <tr>
-            <th scope="row">Monthly cost with interest</th>
-            <td>@paymentOverview.LoanMonthlyCost Kr</td>
-        </tr>
-        <tr>
-            <th scope="row">Yearly cost with interest</th>
-            <td>@paymentOverview.LoanYearlyCostWithInterest Kr</td>
-        </tr>
-        <tr>
-            <th scope="row">Total amount paid in interest rate for the full duration of the loan</th>
-            <td>@paymentOverview.LoanInterestFullDurationCost Kr</td>
-        </tr>
-        <tr>
-            <th scope="row">Total amount paid in administrative fees(excl. interest and installments)</th>
-            <td>@paymentOverview.LoanAdministrativeFeesCost Kr</td>
-        </tr>
-    </tbody>
-</table>
+    <table class="table table-striped col-sm-12 col-xl-8">
+        <tbody>
+            <tr>
+                <th scope="row">Loan amount</th>
+                <td>@LoanAmount Kr</td>
+            </tr>
+            <tr>
+                <th scope="row">Total loan cost</th>
+                <td>@paymentOverview.LoanTotalCost Kr</td>
+            </tr>
+            <tr>
+                <th scope="row">Loan duration</th>
+                <td>@LoanDuration years</td>
+            </tr>
+            <tr>
+                <th scope="row">Annual Interest</th>
+                <td>@paymentOverview.AnnualInterest % </td>
+            </tr>
+            <tr>
+                <th scope="row">Annual percentage rate of charge (APR)</th>
+                <td>@paymentOverview.LoanAPR %</td>
+            </tr>
+            <tr>
+                <th scope="row">Monthly cost with interest</th>
+                <td>@paymentOverview.LoanMonthlyCost Kr</td>
+            </tr>
+            <tr>
+                <th scope="row">Yearly cost with interest</th>
+                <td>@paymentOverview.LoanYearlyCostWithInterest Kr</td>
+            </tr>
+            <tr>
+                <th scope="row">Total amount paid in interest rate for the full duration of the loan</th>
+                <td>@paymentOverview.LoanInterestFullDurationCost Kr</td>
+            </tr>
+            <tr>
+                <th scope="row">Total amount paid in administrative fees(excl. interest and installments)</th>
+                <td>@paymentOverview.LoanAdministrativeFeesCost Kr</td>
+            </tr>
+        </tbody>
+    </table>
 
-<div class="section-buttons">
-    <a href="/">
-        <SfButton CssClass="e-info">Go back</SfButton>
-    </a>
+    <div class="section-buttons">
+        <a href="/">
+            <SfButton CssClass="e-info">Go back</SfButton>
+        </a>
+    </div>
 </div>
 
 
